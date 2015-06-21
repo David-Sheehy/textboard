@@ -12,5 +12,5 @@ class Post(models.Model):
     pass
 
 class Tag(models.Model):
-    tag = contents.TextField(max_lenght=20)
+    tag = models.TextField(max_length=20)
     pass
