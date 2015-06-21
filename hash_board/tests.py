@@ -4,7 +4,7 @@ from hash_board import views
 
 # Create your tests here.
 class NewPostTest(TestCase):
-    return True
+    return False
 
 class RespondToPostTest(TestCase):
-    return True
+    return False
