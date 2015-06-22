@@ -7,7 +7,6 @@ class Thread(models.Model):
     number = models.IntegerField(primary_key=True)
     title = models.TextField(default="default title", max_length=42)
 
-
     def __str__(self):
         return "{}".format(self.number)
     # The tags
@@ -16,6 +15,7 @@ class Post(models.Model):
     contents = models.TextField(default="")
     number = models.IntegerField(primary_key=True)
 
+    thread = models.ForeignKey(Thread)
     def __str__(self):
         return "{}".format(self.number)
 
@@ -25,11 +25,9 @@ class Tag(models.Model):
     def __str__(self):
         return "{}".format(self.name)
 
-
 class ThreadTag(models.Model):
     """
     A mapping class that handles the many to many relationship
     """
-    thread = models.ForeignKey(Thread)
-    tag = models.ForeignKey(Tag)
-    pass
+    thread = models.ForeignKey(Thread, default=None)
+    tag = models.ForeignKey(Tag, default=None)
