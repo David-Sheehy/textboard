@@ -31,3 +31,6 @@ class ThreadTag(models.Model):
     """
     thread = models.ForeignKey(Thread, default=None)
     tag = models.ForeignKey(Tag, default=None)
+
+    def __str__(self):
+        return "thread:{}, tag{}".format(self.thread,self.tag)

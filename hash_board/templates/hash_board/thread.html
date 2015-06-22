@@ -9,9 +9,11 @@
         <contents>
         <!-- posts go here, eventually -->
         </contents>
-        <tags>
-        <!-- tags go here, eventually -->
-        </tags>
+        <table id="tags">
+        {% for tag in tags %}
+            <td>{{ tag }}</td>
+        {% endfor %}
+        </table>
         <br>
         
     </thread>
