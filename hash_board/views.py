@@ -22,8 +22,13 @@ def thread(request, thread_id):
 
 def  tag(request, tag_name):
     tag = get_object_or_404(Tag,pk=tag_name)
+
+    if tag:
+        thread_tags = ThreadTag.objects.filter(tag=tag)
+        threads = [t.thread for t in thread_tags]
+
     context_dict = {
             'tag':tag,
-            'threads':None,
+            'threads':threads,
         }
     return render(request, "hash_board/tag.html",context_dict)
