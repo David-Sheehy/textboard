@@ -9,8 +9,8 @@ class Thread(models.Model):
 
     def __str__(self):
         return "{}".format(self.number)
-    # a number of posts
-    # a number of tags
+    # The posts
+    # The tags
     pass
 
 class Post(models.Model):
@@ -22,7 +22,7 @@ class Post(models.Model):
     pass
 
 class Tag(models.Model):
-    tag = models.TextField(max_length=20)
+    tag = models.TextField(primary_key=True,max_length=20)
 
     def __str__(self):
         return "{}".format(self.tag)
