@@ -15,7 +15,7 @@ class Post(models.Model):
     contents = models.TextField(default="")
     number = models.IntegerField(primary_key=True)
 
-    thread = models.ForeignKey(Thread)
+    thread = models.ForeignKey(Thread, default=None)
     def __str__(self):
         return "{}".format(self.number)
 
