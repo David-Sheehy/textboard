@@ -8,14 +8,15 @@ def thread(request, thread_id):
     thread = get_object_or_404(Thread,pk=thread_id)
 
     # get the tags associated with this post
-    if thread:
-        thread_tags = ThreadTag.objects.filter(thread=thread)
-        tags = [t.tag for t in thread_tags]
-        print(tags)
+    thread_tags = ThreadTag.objects.filter(thread=thread)
+    tags = [t.tag for t in thread_tags]
+    posts = Post.objects.filter(thread=thread)
+
 
     context_dict =  {
             'thread':thread,
             'tags':tags,
+            'posts':posts,
         }
 
     return render(request, "hash_board/thread.html", context_dict)

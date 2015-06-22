@@ -6,9 +6,14 @@
 <body>
     <thread>
     <h>{{ thread.title }} {{ thread.number }}<h>
-        <contents>
-        <!-- posts go here, eventually -->
-        </contents>
+        <table id="contents">
+        {% for post in posts %}
+            <td>
+                {{ post }}
+            </td>
+        {% endfor %}
+        </table>
+
         <table id="tags">
         {% for tag in tags %}
             <td>{{ tag }}</td>

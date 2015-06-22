@@ -15,9 +15,9 @@ class Post(models.Model):
     contents = models.TextField(default="")
     number = models.IntegerField(primary_key=True)
 
-    thread = models.ForeignKey(Thread, default=None)
+    thread = models.ForeignKey(Thread)
     def __str__(self):
-        return "{}".format(self.number)
+        return "{}".format(self.contents)
 
 class Tag(models.Model):
     name = models.TextField(primary_key=True,max_length=20)
