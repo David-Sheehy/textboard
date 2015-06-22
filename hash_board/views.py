@@ -4,8 +4,8 @@ from hash_board.models import Post, Thread, Tag, ThreadTag
 def index(request):
     return render(request, "hash_board/index.html")
 
-def thread(request, thread_id):
-    thread = get_object_or_404(Thread,pk=thread_id)
+def thread(request, thread_number):
+    thread = get_object_or_404(Thread,pk=thread_number)
 
     # get the tags associated with this post
     thread_tags = ThreadTag.objects.filter(thread=thread)

@@ -7,7 +7,9 @@
     <table id="threads">
         {% for thread in threads %}
         <td>
-            {{ thread.title }}
+            <a href= {% url "thread_page" thread_number=thread.number %}>
+               {{ thread.title }}
+            </a>
         </td>
         {% endfor %}
     </table>
