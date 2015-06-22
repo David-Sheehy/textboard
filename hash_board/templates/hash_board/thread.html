@@ -1,7 +1,18 @@
 <!doctype html>
+{% load staticfiles %}
 <head>
+    <Title>{{ thread.title }} </Title>
 </head>
 <body>
-    You're looking at thread <b>{{ thread_id }}</b>.
-    it has some tags.
+    <thread>
+    <h>{{ thread.title }} {{ thread.number }}<h>
+        <contents>
+        <!-- posts go here, eventually -->
+        </contents>
+        <tags>
+        <!-- tags go here, eventually -->
+        </tags>
+        <br>
+        
+    </thread>
 </body>
