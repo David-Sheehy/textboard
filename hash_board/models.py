@@ -6,9 +6,12 @@ class Thread(models.Model):
     """
     number = models.IntegerField(primary_key=True)
     title = models.TextField(default="default title", max_length=42)
+    tlp = models.TextField(default="") # the top level post
 
     def __str__(self):
         return "{}".format(self.number)
+
+
     # The tags
 
 class Post(models.Model):
