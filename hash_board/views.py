@@ -2,7 +2,17 @@ from django.shortcuts import render, get_object_or_404
 from hash_board.models import Post, Thread, Tag, ThreadTag
 
 def index(request):
-    return render(request, "hash_board/index.html")
+    # get the top few tags
+    # Should be replaced by the most popular
+    tags = Tag.objects.all()[:10]
+    threads = Thread.objects.all()[:10]
+
+    context_dict = {
+        'tags':tags,
+        'threads':threads,
+    }
+
+    return render(request, "hash_board/index.html", context_dict)
 
 def thread(request, thread_number):
     thread = get_object_or_404(Thread,pk=thread_number)

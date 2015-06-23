@@ -1,8 +1,34 @@
 <!doctype html>
+{% load staticfiles %}
 <head>
     <title> Textboard </title>
 </head>
 <body>
     there should be a search bar here
-    Some of the recent tasks should be listed here as well.
+    </br>
+    Here are some popular tags.
+    <table>
+    <tr>
+    {% for t in tags %}
+        <a href={% url "tag_page" tag_name=t %} >
+            {{ t }}
+        </a>
+    {% endfor %}
+    </tr>
+    </table>
+
+    </br>
+    some recent threads
+    <table>
+    <tr>
+    {% for thr in threads %}
+        <td>
+            <a href={% url "thread_page" thread_number=thr.number %}>
+                {{ thr.title }}
+            </a>
+            {{ thr.tlp }}
+        </td>
+    {% endfor %}
+    </tr>
+    </table>
 </body>

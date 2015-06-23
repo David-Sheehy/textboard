@@ -2,9 +2,10 @@ from django.test import TestCase
 from hash_board import models
 from hash_board import views
 
-# Create your tests here.
-class NewPostTest(TestCase):
-    return False
+class ThreadTest(TestCase):
+    def test_thread_page_has_one_thread():
+        return False
+    pass
 
-class RespondToPostTest(TestCase):
-    return False
+class TagTests(TestCase):
+    pass
